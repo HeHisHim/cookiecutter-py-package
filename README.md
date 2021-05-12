@@ -13,7 +13,7 @@
 
 ```bash
 pip install cookiecutter 
-cookiecutter https://github.com/AngusWG/cookiecutter-py-package.git
+cookiecutter https://github.com/HeHisHim/cookiecutter-py-package.git
 ```
 
 ### 参数说明
@@ -29,5 +29,5 @@ cookiecutter https://github.com/AngusWG/cookiecutter-py-package.git
 
 cmd 上运行下面脚本 设置pre-commit
 ```bash
-python -c "from urllib.request import urlopen ;exec(urlopen('https://github.com/AngusWG/cookiecutter-py-package/raw/master/git_pre_commit_hook.py').read())"
+python -c "from urllib.request import urlopen ;exec(urlopen('https://github.com/HeHisHim/cookiecutter-py-package/raw/master/git_pre_commit_hook.py').read())"
 ```
