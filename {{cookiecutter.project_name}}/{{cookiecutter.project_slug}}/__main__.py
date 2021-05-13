@@ -1,8 +1,6 @@
 #!/usr/bin/python3
 # encoding: utf-8
 """ {{cookiecutter.project_slug}} 's entry_points"""
-import fire
-
 
 def entry_point():  # pragma: no cover
     pass
