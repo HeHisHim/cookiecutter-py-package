@@ -5,17 +5,7 @@ import fire
 
 
 def entry_point():  # pragma: no cover
-    """
-    默认函数 触发fire包
-    https://github.com/google/python-fire
-    """
-    fire.Fire()
-
-
-def ipython():  # pragma: no cover
-    """ 打开ipython命令 """
-    from IPython import embed
-    embed()
+    pass
 
 
 def version():

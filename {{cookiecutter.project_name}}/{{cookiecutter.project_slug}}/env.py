@@ -2,11 +2,8 @@
 # encoding: utf-8
 import logging
 
-import redis
 import sentry_sdk
 from flask import Flask
-from flask_mongoengine import MongoEngine
-from flask_sqlalchemy import SQLAlchemy
 
 from {{cookiecutter.project_slug}}.config import conf
 
@@ -28,6 +25,12 @@ del init_log
 
 app = Flask(__name__)
 app.config.from_object(conf)
+# 数据库初始化
+'''
+import redis
+from flask_mongoengine import MongoEngine
+from flask_sqlalchemy import SQLAlchemy
 sql_db = SQLAlchemy(app)
 mongo_db = MongoEngine(app)
 redis_db = redis.Redis.from_url(conf.redis_url)
+'''
