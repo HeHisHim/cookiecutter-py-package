@@ -13,12 +13,6 @@ if conf.sentry_dns:  # pragma: no cover
         traces_sample_rate=1.0
     )
 
-
-def init_log(log):
-    log.setLevel(conf.LOG_LEVEL)
-    return log
-
-
 def _register_blueprint(app: Flask) -> None:
     # from {{cookiecutter.project_slug}}.views.xxxx import bp
     # app.register_blueprint(bp)
@@ -36,14 +30,16 @@ def _register_extension(app: Flask) -> None:
     """
     pass
 
+
+logger = logging.getLogger("{{cookiecutter.project_slug}}")
+def _register_logger(app: Flask):
+    logger.setLevel(app.config.get("LOG_LEVEL", "DEBUG"))
+
 def create_app() -> Flask:
     app = Flask(__name__, static_folder=None)
     app.config.from_object(conf)
 
-    logger = logging.getLogger("{{cookiecutter.project_slug}}")
-    init_log(logger)
-    del init_log
-
+    _register_logger(app)
     _register_blueprint(app)
     _register_extension(app)
 
