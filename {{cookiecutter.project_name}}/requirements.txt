@@ -1,8 +1,0 @@
-flask
-PyYAML
-{%- if cookiecutter.need_utils_code == "y" %}
-sentry_sdk
-pymysql
-sqlalchemy
-flask_sqlalchemy
-{%- endif %}

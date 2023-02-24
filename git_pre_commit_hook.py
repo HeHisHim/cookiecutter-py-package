@@ -38,5 +38,5 @@ def service():
     os.popen("git.exe  config --global core.hooksPath {}".format(target_dir))
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     service()

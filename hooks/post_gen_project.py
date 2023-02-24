@@ -1,5 +1,3 @@
-#!/usr/bin/python3
-# encoding: utf-8
 import os
 
 PROJECT_DIRECTORY = os.path.realpath(os.path.curdir)
@@ -8,14 +6,14 @@ PROJECT_DIRECTORY = os.path.realpath(os.path.curdir)
 def remove_file(filepath):
     os.remove(os.path.join(PROJECT_DIRECTORY, filepath))
 
+def organize_files(package_dir):
+    os.system(f"mv -f {package_dir}/* ../")
+    os.system(f"mv -f {package_dir}/.[^.]* ../")
+    os.system(f"rm -rf {package_dir}/")
 
-if __name__ == '__main__':
 
-    if 'Not open source' == '{{ cookiecutter.open_source_license }}':
-        remove_file('LICENSE')
+if __name__ == "__main__":
+    if "Not open source" == "{{ cookiecutter.open_source_license }}":
+        remove_file("LICENSE")
 
-    if 'n' == '{{ cookiecutter.need_utils_code }}':
-        package_dir = "{{cookiecutter.project_slug}}"
-        remove_file(os.path.join(package_dir, "config.py"))
-        remove_file(os.path.join(package_dir, "factory.py"))
-        remove_file(os.path.join(package_dir + "_config.yaml"))
+    organize_files(package_dir="{{cookiecutter.project_slug}}")
